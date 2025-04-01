@@ -178,7 +178,7 @@
             <button class="hint-button" onclick="toggleHint('hint8')">Ver Pista</button>
             <div id="hint8" class="hint">
                 <p>Utiliza <span class="keyword">WHERE</span> con el operador de desigualdad.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.language WHERE name != "German";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name != "German";</span></p>
                 <p>Ten en cuenta que el valor de texto debe estar entre comillas.</p>
             </div>
         </div>
@@ -189,7 +189,7 @@
             <button class="hint-button" onclick="toggleHint('hint9')">Ver Pista</button>
             <div id="hint9" class="hint">
                 <p>Usa <span class="keyword">SELECT</span> para las columnas específicas y <span class="keyword">WHERE</span> para filtrar por título.</p>
-                <p>Estructura: <span class="code">SELECT description, release_year FROM esquema.film WHERE title = "IMPACT ALADDIN";</span></p>
+                <p>Estructura: <span class="code">SELECT columna1, columna2 FROM esquema.tabla WHERE title = "IMPACT ALADDIN";</span></p>
                 <p>Nota: Las consultas SQL generalmente distinguen entre mayúsculas y minúsculas para los valores de texto.</p>
             </div>
         </div>
@@ -200,7 +200,7 @@
             <button class="hint-button" onclick="toggleHint('hint10')">Ver Pista</button>
             <div id="hint10" class="hint">
                 <p>Combina <span class="keyword">WHERE</span> para filtrar y <span class="keyword">ORDER BY</span> para ordenar.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount > 0.99 ORDER BY amount DESC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE precio > 0.99 ORDER BY precio DESC;</span></p>
             </div>
         </div>
 
@@ -232,7 +232,7 @@
             <button class="hint-button" onclick="toggleHint('hint13')">Ver Pista</button>
             <div id="hint13" class="hint">
                 <p>Similar al ejercicio anterior, usa <span class="keyword">OR</span> para unir las condiciones.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.language WHERE language_id = 1 OR name = "german";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE language_id = 1 OR name = "german";</span></p>
             </div>
         </div>
 
@@ -242,8 +242,8 @@
             <button class="hint-button" onclick="toggleHint('hint14')">Ver Pista</button>
             <div id="hint14" class="hint">
                 <p>Utiliza el operador <span class="keyword">!=</span> o <span class="keyword">NOT</span> para negar una condición.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.category WHERE name != "Action";</span></p>
-                <p>Alternativa: <span class="code">SELECT * FROM esquema.category WHERE NOT name = "Action";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name != "Action";</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE NOT name = "Action";</span></p>
             </div>
         </div>
 
@@ -253,7 +253,7 @@
             <button class="hint-button" onclick="toggleHint('hint15')">Ver Pista</button>
             <div id="hint15" class="hint">
                 <p>Similar al ejercicio anterior, utiliza <span class="keyword">!=</span> para excluir un valor específico.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE rating != "PG";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE rating != "PG";</span></p>
             </div>
         </div>
 
@@ -263,7 +263,7 @@
             <button class="hint-button" onclick="toggleHint('hint16')">Ver Pista</button>
             <div id="hint16" class="hint">
                 <p>Combina <span class="keyword">DISTINCT</span> con una condición de exclusión usando <span class="keyword">!=</span>.</p>
-                <p>Estructura: <span class="code">SELECT DISTINCT rating FROM esquema.film WHERE rating != "PG";</span></p>
+                <p>Estructura: <span class="code">SELECT DISTINCT rating FROM esquema.tabla WHERE rating != "PG";</span></p>
             </div>
         </div>
 
@@ -273,7 +273,7 @@
             <button class="hint-button" onclick="toggleHint('hint17')">Ver Pista</button>
             <div id="hint17" class="hint">
                 <p>Utiliza múltiples condiciones con <span class="keyword">AND</span> y añade <span class="keyword">ORDER BY</span>.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE customer_id = 36 AND amount > 0.99 AND staff_id = 1 ORDER BY amount ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE customer_id = 36 AND amount > 0.99 AND staff_id = 1 ORDER BY amount ASC;</span></p>
             </div>
         </div>
 
@@ -283,8 +283,8 @@
             <button class="hint-button" onclick="toggleHint('hint18')">Ver Pista</button>
             <div id="hint18" class="hint">
                 <p>Puedes usar el operador <span class="keyword">IN</span> como alternativa a múltiples condiciones OR.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.customer WHERE first_name IN ("Mary", "Patricia");</span></p>
-                <p>Equivalente a: <span class="code">SELECT * FROM esquema.customer WHERE first_name = "Mary" OR first_name = "Patricia";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name IN ("Mary", "Patricia");</span></p>
+                <p>Equivalente a: <span class="code">SELECT * FROM esquema.tabla WHERE first_name = "Mary" OR first_name = "Patricia";</span></p>
             </div>
         </div>
 
@@ -294,7 +294,7 @@
             <button class="hint-button" onclick="toggleHint('hint19')">Ver Pista</button>
             <div id="hint19" class="hint">
                 <p>Combina <span class="keyword">IN</span> con <span class="keyword">AND</span> y una comparación numérica.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE special_features IN (...) AND rating IN (...) AND length > 50 ORDER BY length ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE special_features IN (...) AND rating IN (...) AND length > 50 ORDER BY length ASC;</span></p>
                 <p>Usa IN para los valores categóricos y comparadores para los valores numéricos.</p>
             </div>
         </div>
@@ -305,7 +305,7 @@
             <button class="hint-button" onclick="toggleHint('hint20')">Ver Pista</button>
             <div id="hint20" class="hint">
                 <p>Utiliza <span class="keyword">NOT IN</span> para excluir múltiples valores.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.category WHERE name NOT IN ("Action", "Children", "Animation");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name NOT IN ("Action", "Children", "Animation");</span></p>
             </div>
         </div>
 
@@ -315,7 +315,7 @@
             <button class="hint-button" onclick="toggleHint('hint21')">Ver Pista</button>
             <div id="hint21" class="hint">
                 <p>Utiliza el operador <span class="keyword">IN</span> para filtrar por múltiples títulos.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.film_text WHERE title IN ("ZORRO ARK", "VIRGIN DAISY", "UNITED PILOT");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE title IN ("ZORRO ARK", "VIRGIN DAISY", "UNITED PILOT");</span></p>
             </div>
         </div>
 
@@ -325,7 +325,7 @@
             <button class="hint-button" onclick="toggleHint('hint22')">Ver Pista</button>
             <div id="hint22" class="hint">
                 <p>Similar al ejercicio anterior, usa <span class="keyword">IN</span> para incluir una lista de ciudades.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.city WHERE city IN ("Chiayi", "Dongying", "Fukuyama", "Kilis");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE city IN ("Chiayi", "Dongying", "Fukuyama", "Kilis");</span></p>
             </div>
         </div>
 
@@ -335,7 +335,7 @@
             <button class="hint-button" onclick="toggleHint('hint23')">Ver Pista</button>
             <div id="hint23" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de IDs y <span class="keyword">AND</span> para la condición adicional.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE customer_id BETWEEN 300 AND 500 AND staff_id = 1 ORDER BY customer_id ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE customer_id BETWEEN 300 AND 500 AND staff_id = 1 ORDER BY customer_id ASC;</span></p>
                 <p>BETWEEN incluye los valores límite (300 y 500 en este caso).</p>
             </div>
         </div>
