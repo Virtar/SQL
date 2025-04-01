@@ -346,7 +346,7 @@
             <button class="hint-button" onclick="toggleHint('hint24')">Ver Pista</button>
             <div id="hint24" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de montos y <span class="keyword">ORDER BY</span> para ordenar.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
             </div>
         </div>
 
@@ -356,8 +356,8 @@
             <button class="hint-button" onclick="toggleHint('hint25')">Ver Pista</button>
             <div id="hint25" class="hint">
                 <p>Utiliza <span class="keyword">NOT BETWEEN</span> para excluir un rango de valores.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount NOT BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
-                <p>Alternativa: <span class="code">SELECT * FROM esquema.payment WHERE amount < 3 OR amount > 5 ORDER BY amount DESC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount NOT BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE amount < 3 OR amount > 5 ORDER BY amount DESC;</span></p>
             </div>
         </div>
 
@@ -367,7 +367,7 @@
             <button class="hint-button" onclick="toggleHint('hint26')">Ver Pista</button>
             <div id="hint26" class="hint">
                 <p>Combina <span class="keyword">BETWEEN</span>, <span class="keyword">AND</span> e <span class="keyword">IN</span> para las diferentes condiciones.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount BETWEEN 2.99 AND 4.99 AND staff_id = 2 AND customer_id IN (1, 2);</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount BETWEEN 2.99 AND 4.99 AND staff_id = 2 AND customer_id IN (1, 2);</span></p>
             </div>
         </div>
 
@@ -377,7 +377,7 @@
             <button class="hint-button" onclick="toggleHint('hint27')">Ver Pista</button>
             <div id="hint27" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de city_id.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.address WHERE city_id BETWEEN 300 AND 350;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE city_id BETWEEN 300 AND 350;</span></p>
             </div>
         </div>
 
@@ -387,7 +387,7 @@
             <button class="hint-button" onclick="toggleHint('hint28')">Ver Pista</button>
             <div id="hint28" class="hint">
                 <p>Combina <span class="keyword">BETWEEN</span> y operadores de comparación (<span class="keyword"><=</span>, <span class="keyword"><</span>) con <span class="keyword">AND</span>.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE rental_rate BETWEEN 0.99 AND 2.99 AND length <= 50 AND replacement_cost < 20;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tablam WHERE rental_rate BETWEEN 0.99 AND 2.99 AND length <= 50 AND replacement_cost < 20;</span></p>
             </div>
         </div>
     </div>
