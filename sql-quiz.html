@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Ejercicios SQL</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .exercise {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .exercise:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-number {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .hint-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .hint-button:hover {
+            background-color: #2980b9;
+        }
+        .hint {
+            display: none;
+            background-color: #eafaf1;
+            border-left: 4px solid #2ecc71;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        .keyword {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .section {
+            background-color: #eef2f7;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+        }
+        .section-title {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 3px 5px;
+            color: #e74c3c;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuestionario de Ejercicios SQL</h1>
+    
+    <div class="section">
+        <h2 class="section-title">Fundamentos de Consultas SQL</h2>
+        <p>Los siguientes ejercicios te ayudarán a practicar con las cláusulas básicas de SQL, incluyendo SELECT, DISTINCT, ORDER BY, WHERE, filtros condicionales, entre otros.</p>
+    </div>
+
+    <div id="exercises-container">
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 1:</span>
+            <span>Consulta store_id, first_name y last_name de la tabla customer de la base de datos sakila.</span>
+            <button class="hint-button" onclick="toggleHint('hint1')">Ver Pista</button>
+            <div id="hint1" class="hint">
+                <p>Utiliza la cláusula <span class="keyword">SELECT</span> para seleccionar las columnas específicas de la tabla.</p>
+                <p>Estructura: <span class="code">SELECT columna1, columna2, columna3 FROM esquema.tabla;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 2:</span>
+            <span>Cambia el nombre de las columnas store_id, first_name y last_name a Tienda, Nombre y Apellido respectivamente.</span>
+            <button class="hint-button" onclick="toggleHint('hint2')">Ver Pista</button>
+            <div id="hint2" class="hint">
+                <p>Puedes usar <span class="keyword">alias</span> para cambiar los nombres de las columnas en el resultado.</p>
+                <p>Estructura: <span class="code">SELECT columna1 AS NuevoNombre1, columna2 AS NuevoNombre2 FROM esquema.tabla;</span></p>
+                <p>También puedes omitir la palabra AS: <span class="code">SELECT columna1 NuevoNombre1, columna2 NuevoNombre2 FROM esquema.tabla;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 3:</span>
+            <span>Ordena de manera descendente la columna Apellido en la consulta del ejercicio 2.</span>
+            <button class="hint-button" onclick="toggleHint('hint3')">Ver Pista</button>
+            <div id="hint3" class="hint">
+                <p>Utiliza la cláusula <span class="keyword">ORDER BY</span> con <span class="keyword">DESC</span> para ordenar de manera descendente.</p>
+                <p>Estructura: <span class="code">SELECT columna1 Alias1, columna2 Alias2 FROM esquema.tabla ORDER BY Alias2 DESC;</span></p>
+                <p>Nota: Puedes usar el alias en el ORDER BY.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 4:</span>
+            <span>¿Cuál es la cantidad más baja y más alta de la columna amount en la tabla payment?</span>
+            <button class="hint-button" onclick="toggleHint('hint4')">Ver Pista</button>
+            <div id="hint4" class="hint">
+                <p>Puedes usar las funciones <span class="keyword">MIN()</span> y <span class="keyword">MAX()</span> para encontrar los valores mínimo y máximo.</p>
+                <p>Estructura: <span class="code">SELECT MIN(columna), MAX(columna) FROM esquema.tabla;</span></p>
+                <p>Alternativa: También podrías usar ORDER BY con LIMIT 1 para cada caso.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 5:</span>
+            <span>Traer los distintos precios y ordenarlos de manera Ascendente.</span>
+            <button class="hint-button" onclick="toggleHint('hint5')">Ver Pista</button>
+            <div id="hint5" class="hint">
+                <p>Utiliza <span class="keyword">DISTINCT</span> para eliminar duplicados y <span class="keyword">ORDER BY</span> para ordenar.</p>
+                <p>Estructura: <span class="code">SELECT DISTINCT columna FROM esquema.tabla ORDER BY columna ASC;</span></p>
+                <p>Nota: ASC es el orden predeterminado, por lo que es opcional incluirlo.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 6:</span>
+            <span>Traer solo los precios distintos de la tabla payment donde el amount sea menor a 3 y ordenarlos de manera descendente.</span>
+            <button class="hint-button" onclick="toggleHint('hint6')">Ver Pista</button>
+            <div id="hint6" class="hint">
+                <p>Combina <span class="keyword">DISTINCT</span>, <span class="keyword">WHERE</span> y <span class="keyword">ORDER BY</span>.</p>
+                <p>Estructura: <span class="code">SELECT DISTINCT columna FROM esquema.tabla WHERE columna < valor ORDER BY columna DESC;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 7:</span>
+            <span>Traer todos los datos del staff donde el staff_id sea distinto de 2.</span>
+            <button class="hint-button" onclick="toggleHint('hint7')">Ver Pista</button>
+            <div id="hint7" class="hint">
+                <p>Utiliza el operador <span class="keyword">!=</span> o <span class="keyword">&lt;&gt;</span> para "distinto de".</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE columna != valor;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 8:</span>
+            <span>Traer todos los idiomas que sean distintos de German.</span>
+            <button class="hint-button" onclick="toggleHint('hint8')">Ver Pista</button>
+            <div id="hint8" class="hint">
+                <p>Utiliza <span class="keyword">WHERE</span> con el operador de desigualdad.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.language WHERE name != "German";</span></p>
+                <p>Ten en cuenta que el valor de texto debe estar entre comillas.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 9:</span>
+            <span>Consulta description, release_year de la tabla film donde title sea IMPACT ALADDIN.</span>
+            <button class="hint-button" onclick="toggleHint('hint9')">Ver Pista</button>
+            <div id="hint9" class="hint">
+                <p>Usa <span class="keyword">SELECT</span> para las columnas específicas y <span class="keyword">WHERE</span> para filtrar por título.</p>
+                <p>Estructura: <span class="code">SELECT description, release_year FROM esquema.film WHERE title = "IMPACT ALADDIN";</span></p>
+                <p>Nota: Las consultas SQL generalmente distinguen entre mayúsculas y minúsculas para los valores de texto.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 10:</span>
+            <span>Consulta la tabla payment donde amount sea mayor a 0.99 y ordenarlo de manera descendente.</span>
+            <button class="hint-button" onclick="toggleHint('hint10')">Ver Pista</button>
+            <div id="hint10" class="hint">
+                <p>Combina <span class="keyword">WHERE</span> para filtrar y <span class="keyword">ORDER BY</span> para ordenar.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount > 0.99 ORDER BY amount DESC;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 11:</span>
+            <span>Traer todos los registros en la tabla country donde el country sea igual a Algeria y además el country_id = 2.</span>
+            <button class="hint-button" onclick="toggleHint('hint11')">Ver Pista</button>
+            <div id="hint11" class="hint">
+                <p>Utiliza el operador <span class="keyword">AND</span> para combinar condiciones.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 AND condicion2;</span></p>
+                <p>Ambas condiciones deben cumplirse para que se devuelva el registro.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 12:</span>
+            <span>Traer todos los registros en la tabla country donde el country sea igual a Algeria o el country_id = 12.</span>
+            <button class="hint-button" onclick="toggleHint('hint12')">Ver Pista</button>
+            <div id="hint12" class="hint">
+                <p>Utiliza el operador <span class="keyword">OR</span> para combinar condiciones de forma que se cumpla al menos una.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 OR condicion2;</span></p>
+                <p>Basta con que una condición sea verdadera para que se devuelva el registro.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 13:</span>
+            <span>Traer todos los registros en la tabla language donde el language_id sea igual a 1 o el name = german.</span>
+            <button class="hint-button" onclick="toggleHint('hint13')">Ver Pista</button>
+            <div id="hint13" class="hint">
+                <p>Similar al ejercicio anterior, usa <span class="keyword">OR</span> para unir las condiciones.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.language WHERE language_id = 1 OR name = "german";</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 14:</span>
+            <span>Traer todos los registros en la tabla category donde no se encuentre el name Action.</span>
+            <button class="hint-button" onclick="toggleHint('hint14')">Ver Pista</button>
+            <div id="hint14" class="hint">
+                <p>Utiliza el operador <span class="keyword">!=</span> o <span class="keyword">NOT</span> para negar una condición.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.category WHERE name != "Action";</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.category WHERE NOT name = "Action";</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 15:</span>
+            <span>Traer todos los registros en la tabla film donde el rating no sea PG.</span>
+            <button class="hint-button" onclick="toggleHint('hint15')">Ver Pista</button>
+            <div id="hint15" class="hint">
+                <p>Similar al ejercicio anterior, utiliza <span class="keyword">!=</span> para excluir un valor específico.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE rating != "PG";</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 16:</span>
+            <span>Traer todos los distintos tipos de rating y que no esté contemplado el 'PG'.</span>
+            <button class="hint-button" onclick="toggleHint('hint16')">Ver Pista</button>
+            <div id="hint16" class="hint">
+                <p>Combina <span class="keyword">DISTINCT</span> con una condición de exclusión usando <span class="keyword">!=</span>.</p>
+                <p>Estructura: <span class="code">SELECT DISTINCT rating FROM esquema.film WHERE rating != "PG";</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 17:</span>
+            <span>Filtra la información en la tabla payment donde customer_id sea igual a 36, amount sea mayor a 0.99 y staff_id sea igual a 1. Ordenarlos de manera ascendente por amount.</span>
+            <button class="hint-button" onclick="toggleHint('hint17')">Ver Pista</button>
+            <div id="hint17" class="hint">
+                <p>Utiliza múltiples condiciones con <span class="keyword">AND</span> y añade <span class="keyword">ORDER BY</span>.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE customer_id = 36 AND amount > 0.99 AND staff_id = 1 ORDER BY amount ASC;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 18:</span>
+            <span>Traer todos los nombres donde sean Mary y Patricia de la tabla customer.</span>
+            <button class="hint-button" onclick="toggleHint('hint18')">Ver Pista</button>
+            <div id="hint18" class="hint">
+                <p>Puedes usar el operador <span class="keyword">IN</span> como alternativa a múltiples condiciones OR.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.customer WHERE first_name IN ("Mary", "Patricia");</span></p>
+                <p>Equivalente a: <span class="code">SELECT * FROM esquema.customer WHERE first_name = "Mary" OR first_name = "Patricia";</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 19:</span>
+            <span>Traer todos los registros de la tabla film donde las características especiales sean Trailer y Trailer,Deleted Scenes, además el rating tiene que ser G y R y el tiempo de duración tiene que ser mayor a 50. Ordenarlos de manera ascendente por tiempo.</span>
+            <button class="hint-button" onclick="toggleHint('hint19')">Ver Pista</button>
+            <div id="hint19" class="hint">
+                <p>Combina <span class="keyword">IN</span> con <span class="keyword">AND</span> y una comparación numérica.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE special_features IN (...) AND rating IN (...) AND length > 50 ORDER BY length ASC;</span></p>
+                <p>Usa IN para los valores categóricos y comparadores para los valores numéricos.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 20:</span>
+            <span>Traer todos los registros menos Action, Children, Animation de la tabla category.</span>
+            <button class="hint-button" onclick="toggleHint('hint20')">Ver Pista</button>
+            <div id="hint20" class="hint">
+                <p>Utiliza <span class="keyword">NOT IN</span> para excluir múltiples valores.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.category WHERE name NOT IN ("Action", "Children", "Animation");</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 21:</span>
+            <span>Consulta la tabla film_text de la base de datos sakila. Filtra la información donde title sea ZORRO ARK, VIRGIN DAISY, UNITED PILOT.</span>
+            <button class="hint-button" onclick="toggleHint('hint21')">Ver Pista</button>
+            <div id="hint21" class="hint">
+                <p>Utiliza el operador <span class="keyword">IN</span> para filtrar por múltiples títulos.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.film_text WHERE title IN ("ZORRO ARK", "VIRGIN DAISY", "UNITED PILOT");</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 22:</span>
+            <span>Consulta la tabla city de la base de datos sakila. Filtra la información donde city sea Chiayi, Dongying, Fukuyama y Kilis.</span>
+            <button class="hint-button" onclick="toggleHint('hint22')">Ver Pista</button>
+            <div id="hint22" class="hint">
+                <p>Similar al ejercicio anterior, usa <span class="keyword">IN</span> para incluir una lista de ciudades.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.city WHERE city IN ("Chiayi", "Dongying", "Fukuyama", "Kilis");</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 23:</span>
+            <span>Traer todas las rentas donde el customer_id sean del 300 al 500, y además sean del staff_id = 1. Ordenarlo de manera ASC por customer_id.</span>
+            <button class="hint-button" onclick="toggleHint('hint23')">Ver Pista</button>
+            <div id="hint23" class="hint">
+                <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de IDs y <span class="keyword">AND</span> para la condición adicional.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE customer_id BETWEEN 300 AND 500 AND staff_id = 1 ORDER BY customer_id ASC;</span></p>
+                <p>BETWEEN incluye los valores límite (300 y 500 en este caso).</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 24:</span>
+            <span>Traer todos los registros de la tabla payment donde el monto sea entre 3 y 5, ordenar por amount de manera DESC.</span>
+            <button class="hint-button" onclick="toggleHint('hint24')">Ver Pista</button>
+            <div id="hint24" class="hint">
+                <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de montos y <span class="keyword">ORDER BY</span> para ordenar.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 25:</span>
+            <span>Traer todos los registros de la tabla payment donde el monto no sea entre 3 y 5, ordenar por amount de manera DESC.</span>
+            <button class="hint-button" onclick="toggleHint('hint25')">Ver Pista</button>
+            <div id="hint25" class="hint">
+                <p>Utiliza <span class="keyword">NOT BETWEEN</span> para excluir un rango de valores.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount NOT BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.payment WHERE amount < 3 OR amount > 5 ORDER BY amount DESC;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 26:</span>
+            <span>Consulta la tabla payment de la base de datos sakila. Filtra la información donde amount esté entre 2.99 y 4.99, staff_id sea igual a 2 y customer_id sea 1 y 2.</span>
+            <button class="hint-button" onclick="toggleHint('hint26')">Ver Pista</button>
+            <div id="hint26" class="hint">
+                <p>Combina <span class="keyword">BETWEEN</span>, <span class="keyword">AND</span> e <span class="keyword">IN</span> para las diferentes condiciones.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.payment WHERE amount BETWEEN 2.99 AND 4.99 AND staff_id = 2 AND customer_id IN (1, 2);</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 27:</span>
+            <span>Consulta la tabla address de la base de datos sakila. Filtra la información donde city_id esté entre 300 y 350.</span>
+            <button class="hint-button" onclick="toggleHint('hint27')">Ver Pista</button>
+            <div id="hint27" class="hint">
+                <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de city_id.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.address WHERE city_id BETWEEN 300 AND 350;</span></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 28:</span>
+            <span>Consulta la tabla film de la base de datos sakila. Filtra la información donde rental_rate esté entre 0.99 y 2.99, length sea menor igual de 50 y replacement_cost sea menor de 20.</span>
+            <button class="hint-button" onclick="toggleHint('hint28')">Ver Pista</button>
+            <div id="hint28" class="hint">
+                <p>Combina <span class="keyword">BETWEEN</span> y operadores de comparación (<span class="keyword"><=</span>, <span class="keyword"><</span>) con <span class="keyword">AND</span>.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.film WHERE rental_rate BETWEEN 0.99 AND 2.99 AND length <= 50 AND replacement_cost < 20;</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Consejos para resolver estos ejercicios</h2>
+        <p>1. Lee atentamente cada ejercicio para entender qué se te pide exactamente.</p>
+        <p>2. Identifica las cláusulas y operadores SQL necesarios (SELECT, WHERE, ORDER BY, etc.).</p>
+        <p>3. Ten en cuenta las tablas y esquemas que debes consultar (sakila.tabla).</p>
+        <p>4. Recuerda que los textos deben ir entre comillas ("texto") en las condiciones.</p>
+        <p>5. Verifica que tu consulta final cumpla con todos los requisitos del ejercicio.</p>
+    </div>
+
+    <footer>
+        <p>Cuestionario de Ejercicios SQL &copy; 2025</p>
+    </footer>
+
+    <script>
+        function toggleHint(hintId) {
+            let hint = document.getElementById(hintId);
+            if (hint.style.display === "block") {
+                hint.style.display = "none";
+            } else {
+                hint.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
