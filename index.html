@@ -391,6 +391,75 @@
             </div>
         </div>
     </div>
+<div class="section">
+            <h2 class="section-title">Operador LIKE</h2>
+            <p>El operador LIKE se utiliza en la cláusula WHERE para buscar un patrón específico en una columna de texto. Usa caracteres comodín como % (coincide con cualquier número de caracteres) y _ (coincide con un único carácter).</p>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 29:</span>
+            <span>Traer todos los registros en la tabla actor, los nombres que empiecen con la letra "A" y el apellido empiece con la letra "B".</span>
+            <button class="hint-button" onclick="toggleHint('hint29')">Ver Pista</button>
+            <div id="hint29" class="hint">
+                <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> al final del patrón.</p>
+                <p>El símbolo % representa cero o más caracteres.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'A%' AND last_name LIKE 'B%';</span></p>
+                <p>Esto buscará nombres que empiecen con "A" y apellidos que empiecen con "B".</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 30:</span>
+            <span>Traer todos los registros donde los nombres terminen con la letra "A" y además los apellidos terminen con la letra "N".</span>
+            <button class="hint-button" onclick="toggleHint('hint30')">Ver Pista</button>
+            <div id="hint30" class="hint">
+                <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> al inicio del patrón.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE '%A' AND last_name LIKE '%N';</span></p>
+                <p>El símbolo % al principio indica cualquier número de caracteres antes de la letra final.</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 31:</span>
+            <span>Traer todos los registros donde el nombre contiene la palabra "NE" en cualquiera de sus posiciones y además que tenga el apellido la palabra "RO".</span>
+            <button class="hint-button" onclick="toggleHint('hint31')">Ver Pista</button>
+            <div id="hint31" class="hint">
+                <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> tanto al inicio como al final del patrón.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE '%NE%' AND last_name LIKE '%RO%';</span></p>
+                <p>El patrón '%NE%' buscará "NE" en cualquier posición del nombre (inicio, medio o final).</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 32:</span>
+            <span>Traer todos los registros donde todos los nombres empiecen con "A" y terminen con "E".</span>
+            <button class="hint-button" onclick="toggleHint('hint32')">Ver Pista</button>
+            <div id="hint32" class="hint">
+                <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> en el medio del patrón.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'A%E';</span></p>
+                <p>Esto buscará nombres que empiecen con "A", tengan cualquier número de caracteres en medio, y terminen con "E".</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 33:</span>
+            <span>Traer todos los registros donde los nombres empiecen con la letra "C" y terminen con "N" y además que el apellido empiece con la letra "g".</span>
+            <button class="hint-button" onclick="toggleHint('hint33')">Ver Pista</button>
+            <div id="hint33" class="hint">
+                <p>Combina patrones <span class="keyword">LIKE</span> para diferentes columnas.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'C%N' AND last_name LIKE 'g%';</span></p>
+  </div>
+        </div>
+        <div class="exercise">
+            <span class="exercise-number">Ejercicio 34:</span>
+            <span>Consulta la tabla film de la base de datos sakila.
+Filtra la información donde release_year sea igual a 2006  y title empiece con ALI.</span>
+            <button class="hint-button" onclick="toggleHint('hint34')">Ver Pista</button>
+            <div id="hint34" class="hint">
+                <p>Combina patrones <span class="keyword">LIKE</span> para diferentes columnas.</p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 = valor AND condicion2 LIKE 'ALI%';</span></p>
+  </div>
+        </div>
 
     <div class="section">
         <h2 class="section-title">Consejos para resolver estos ejercicios</h2>
