@@ -294,7 +294,7 @@
             <button class="hint-button" onclick="toggleHint('hint19')">Ver Pista</button>
             <div id="hint19" class="hint">
                 <p>Combina <span class="keyword">IN</span> con <span class="keyword">AND</span> y una comparación numérica.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE special_features IN (...) AND rating IN (...) AND length > 50 ORDER BY length ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 IN (...) AND condicion2 IN (...) AND condicion3 > 50 ORDER BY condicion3 ASC;</span></p>
                 <p>Usa IN para los valores categóricos y comparadores para los valores numéricos.</p>
             </div>
         </div>
@@ -305,7 +305,7 @@
             <button class="hint-button" onclick="toggleHint('hint20')">Ver Pista</button>
             <div id="hint20" class="hint">
                 <p>Utiliza <span class="keyword">NOT IN</span> para excluir múltiples valores.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name NOT IN ("Action", "Children", "Animation");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 NOT IN ("texto1", "texto2", "texto3");</span></p>
             </div>
         </div>
 
@@ -315,7 +315,7 @@
             <button class="hint-button" onclick="toggleHint('hint21')">Ver Pista</button>
             <div id="hint21" class="hint">
                 <p>Utiliza el operador <span class="keyword">IN</span> para filtrar por múltiples títulos.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE title IN ("ZORRO ARK", "VIRGIN DAISY", "UNITED PILOT");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 IN ("texto1", "texto2", "texto3");</span></p>
             </div>
         </div>
 
@@ -325,7 +325,7 @@
             <button class="hint-button" onclick="toggleHint('hint22')">Ver Pista</button>
             <div id="hint22" class="hint">
                 <p>Similar al ejercicio anterior, usa <span class="keyword">IN</span> para incluir una lista de ciudades.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE city IN ("Chiayi", "Dongying", "Fukuyama", "Kilis");</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 IN ("texto1", "texto2", "texto3", "texto4");</span></p>
             </div>
         </div>
 
@@ -335,7 +335,7 @@
             <button class="hint-button" onclick="toggleHint('hint23')">Ver Pista</button>
             <div id="hint23" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de IDs y <span class="keyword">AND</span> para la condición adicional.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE customer_id BETWEEN 300 AND 500 AND staff_id = 1 ORDER BY customer_id ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 BETWEEN valor AND valor AND condicion2 = valor ORDER BY condicion1 ASC;</span></p>
                 <p>BETWEEN incluye los valores límite (300 y 500 en este caso).</p>
             </div>
         </div>
@@ -346,7 +346,7 @@
             <button class="hint-button" onclick="toggleHint('hint24')">Ver Pista</button>
             <div id="hint24" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de montos y <span class="keyword">ORDER BY</span> para ordenar.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 BETWEEN valor AND valor ORDER BY condicion1 DESC;</span></p>
             </div>
         </div>
 
@@ -356,8 +356,8 @@
             <button class="hint-button" onclick="toggleHint('hint25')">Ver Pista</button>
             <div id="hint25" class="hint">
                 <p>Utiliza <span class="keyword">NOT BETWEEN</span> para excluir un rango de valores.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount NOT BETWEEN 3 AND 5 ORDER BY amount DESC;</span></p>
-                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE amount < 3 OR amount > 5 ORDER BY amount DESC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 NOT BETWEEN valor AND valor ORDER BY condicion1 DESC;</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 < 3 OR condicion1 > 5 ORDER BY condicion1 DESC;</span></p>
             </div>
         </div>
 
