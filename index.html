@@ -242,8 +242,8 @@
             <button class="hint-button" onclick="toggleHint('hint14')">Ver Pista</button>
             <div id="hint14" class="hint">
                 <p>Utiliza el operador <span class="keyword">!=</span> o <span class="keyword">NOT</span> para negar una condición.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name != "Action";</span></p>
-                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE NOT name = "Action";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 != "texto";</span></p>
+                <p>Alternativa: <span class="code">SELECT * FROM esquema.tabla WHERE NOT condicion2 = "texto";</span></p>
             </div>
         </div>
 
@@ -253,7 +253,7 @@
             <button class="hint-button" onclick="toggleHint('hint15')">Ver Pista</button>
             <div id="hint15" class="hint">
                 <p>Similar al ejercicio anterior, utiliza <span class="keyword">!=</span> para excluir un valor específico.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE rating != "PG";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 != "texto";</span></p>
             </div>
         </div>
 
@@ -263,7 +263,7 @@
             <button class="hint-button" onclick="toggleHint('hint16')">Ver Pista</button>
             <div id="hint16" class="hint">
                 <p>Combina <span class="keyword">DISTINCT</span> con una condición de exclusión usando <span class="keyword">!=</span>.</p>
-                <p>Estructura: <span class="code">SELECT DISTINCT rating FROM esquema.tabla WHERE rating != "PG";</span></p>
+                <p>Estructura: <span class="code">SELECT DISTINCT rating FROM esquema.tabla WHERE condicion1 != "texto";</span></p>
             </div>
         </div>
 
@@ -273,7 +273,7 @@
             <button class="hint-button" onclick="toggleHint('hint17')">Ver Pista</button>
             <div id="hint17" class="hint">
                 <p>Utiliza múltiples condiciones con <span class="keyword">AND</span> y añade <span class="keyword">ORDER BY</span>.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE customer_id = 36 AND amount > 0.99 AND staff_id = 1 ORDER BY amount ASC;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 = 36 AND condicion2 > 0.99 AND condicion3 = valor ORDER BY condicion2 ASC;</span></p>
             </div>
         </div>
 
@@ -283,8 +283,8 @@
             <button class="hint-button" onclick="toggleHint('hint18')">Ver Pista</button>
             <div id="hint18" class="hint">
                 <p>Puedes usar el operador <span class="keyword">IN</span> como alternativa a múltiples condiciones OR.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name IN ("Mary", "Patricia");</span></p>
-                <p>Equivalente a: <span class="code">SELECT * FROM esquema.tabla WHERE first_name = "Mary" OR first_name = "Patricia";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 IN ("texto1", "texto2");</span></p>
+                <p>Equivalente a: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 = "texto1" OR condicion1 = "Texto2";</span></p>
             </div>
         </div>
 
