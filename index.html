@@ -367,7 +367,7 @@
             <button class="hint-button" onclick="toggleHint('hint26')">Ver Pista</button>
             <div id="hint26" class="hint">
                 <p>Combina <span class="keyword">BETWEEN</span>, <span class="keyword">AND</span> e <span class="keyword">IN</span> para las diferentes condiciones.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE amount BETWEEN 2.99 AND 4.99 AND staff_id = 2 AND customer_id IN (1, 2);</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 BETWEEN valor AND valor AND condicion2 = valor AND condicion3 IN (valor, valor);</span></p>
             </div>
         </div>
 
@@ -377,7 +377,7 @@
             <button class="hint-button" onclick="toggleHint('hint27')">Ver Pista</button>
             <div id="hint27" class="hint">
                 <p>Utiliza <span class="keyword">BETWEEN</span> para el rango de city_id.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE city_id BETWEEN 300 AND 350;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 BETWEEN valor AND valor;</span></p>
             </div>
         </div>
 
@@ -387,7 +387,7 @@
             <button class="hint-button" onclick="toggleHint('hint28')">Ver Pista</button>
             <div id="hint28" class="hint">
                 <p>Combina <span class="keyword">BETWEEN</span> y operadores de comparación (<span class="keyword"><=</span>, <span class="keyword"><</span>) con <span class="keyword">AND</span>.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tablam WHERE rental_rate BETWEEN 0.99 AND 2.99 AND length <= 50 AND replacement_cost < 20;</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tablam WHERE condicion1 BETWEEN valor AND valor AND condicion2 <= valor AND condicion3 < 20;</span></p>
             </div>
         </div>
     </div>
@@ -403,7 +403,7 @@
             <div id="hint29" class="hint">
                 <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> al final del patrón.</p>
                 <p>El símbolo % representa cero o más caracteres.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'A%' AND last_name LIKE 'B%';</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 LIKE 'A%' AND condicion2 LIKE 'B%';</span></p>
                 <p>Esto buscará nombres que empiecen con "A" y apellidos que empiecen con "B".</p>
             </div>
         </div>
@@ -414,7 +414,7 @@
             <button class="hint-button" onclick="toggleHint('hint30')">Ver Pista</button>
             <div id="hint30" class="hint">
                 <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> al inicio del patrón.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE '%A' AND last_name LIKE '%N';</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 LIKE '%A' AND condicion2e LIKE '%N';</span></p>
                 <p>El símbolo % al principio indica cualquier número de caracteres antes de la letra final.</p>
             </div>
         </div>
@@ -425,7 +425,7 @@
             <button class="hint-button" onclick="toggleHint('hint31')">Ver Pista</button>
             <div id="hint31" class="hint">
                 <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> tanto al inicio como al final del patrón.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE '%NE%' AND last_name LIKE '%RO%';</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 LIKE '%NE%' AND condicion2 LIKE '%RO%';</span></p>
                 <p>El patrón '%NE%' buscará "NE" en cualquier posición del nombre (inicio, medio o final).</p>
             </div>
         </div>
