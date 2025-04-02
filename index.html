@@ -178,7 +178,7 @@
             <button class="hint-button" onclick="toggleHint('hint8')">Ver Pista</button>
             <div id="hint8" class="hint">
                 <p>Utiliza <span class="keyword">WHERE</span> con el operador de desigualdad.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name != "German";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE name != "idioma";</span></p>
                 <p>Ten en cuenta que el valor de texto debe estar entre comillas.</p>
             </div>
         </div>
@@ -189,7 +189,7 @@
             <button class="hint-button" onclick="toggleHint('hint9')">Ver Pista</button>
             <div id="hint9" class="hint">
                 <p>Usa <span class="keyword">SELECT</span> para las columnas específicas y <span class="keyword">WHERE</span> para filtrar por título.</p>
-                <p>Estructura: <span class="code">SELECT columna1, columna2 FROM esquema.tabla WHERE title = "IMPACT ALADDIN";</span></p>
+                <p>Estructura: <span class="code">SELECT columna1, columna2 FROM esquema.tabla WHERE titulo = "texto";</span></p>
                 <p>Nota: Las consultas SQL generalmente distinguen entre mayúsculas y minúsculas para los valores de texto.</p>
             </div>
         </div>
@@ -232,7 +232,7 @@
             <button class="hint-button" onclick="toggleHint('hint13')">Ver Pista</button>
             <div id="hint13" class="hint">
                 <p>Similar al ejercicio anterior, usa <span class="keyword">OR</span> para unir las condiciones.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE language_id = 1 OR name = "german";</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE idDelLenguaje = 1 OR name = "texto";</span></p>
             </div>
         </div>
 
@@ -436,7 +436,7 @@
             <button class="hint-button" onclick="toggleHint('hint32')">Ver Pista</button>
             <div id="hint32" class="hint">
                 <p>Utiliza el operador <span class="keyword">LIKE</span> con el comodín <span class="keyword">%</span> en el medio del patrón.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'A%E';</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 LIKE 'A%E';</span></p>
                 <p>Esto buscará nombres que empiecen con "A", tengan cualquier número de caracteres en medio, y terminen con "E".</p>
             </div>
         </div>
@@ -447,7 +447,7 @@
             <button class="hint-button" onclick="toggleHint('hint33')">Ver Pista</button>
             <div id="hint33" class="hint">
                 <p>Combina patrones <span class="keyword">LIKE</span> para diferentes columnas.</p>
-                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE first_name LIKE 'C%N' AND last_name LIKE 'g%';</span></p>
+                <p>Estructura: <span class="code">SELECT * FROM esquema.tabla WHERE condicion1 LIKE 'C%N' AND condicion2 LIKE 'g%';</span></p>
   </div>
         </div>
         <div class="exercise">
